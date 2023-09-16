@@ -1,4 +1,5 @@
-
+from pages.demoqa import DemoQa
+from conftest import browser
 #from selenium.webdriver.common.by import By
 from conftest import browser
 from pages.demoqa import DemoQa
@@ -6,8 +7,8 @@ from pages.demoqa import DemoQa
 def test_icon_exist(browser):
     demo_qa_page = DemoQa(browser)  #
     demo_qa_page.visit()
-    demo_qa_page.click_on_the_icon()
-    assert demo_qa_page.exist_icon()   #проверяем наличие иконки
+    demo_qa_page.icon.click()
+    assert demo_qa_page.icon.exist()   #проверяем наличие иконки
     assert demo_qa_page.equal_url()
 
 #def test_icon_exist(browser):
