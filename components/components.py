@@ -17,11 +17,12 @@ class WebElement:
         try:
             self.find_element()
         except NoSuchElementException:
-            return True
-        return False
+            return False
+        return True
 
     def get_text(self):              #возвращает какой текст кнопки которую находит
         return str(self.find_element().text)
 
-    #def get_footer_text(self):              #
-        #return self.driver.find_element(By.CSS_SELECTOR, "#app > footer")
+
+    def visible(self):
+        return self.find_element().is_displayed()
