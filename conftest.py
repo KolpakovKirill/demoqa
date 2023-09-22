@@ -6,4 +6,5 @@ from selenium import webdriver
 def browser():
     driver = webdriver.Chrome()
     yield driver                  # примерно как return но не завершает функцию
+    driver.set_window_size(width=1000, height=1000)
     driver.quit()

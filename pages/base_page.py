@@ -17,10 +17,14 @@ class BasePage:
             return True
         return False
 
-    #def get_text(self):                      #Убрали в components в класс WebElements
-        #return str(self.find_element().text)
+    def back (self):
+        self.driver.back()
 
+    def forward(self):
+        self.driver.forward()
 
-    #def find_element(self, locator):         #Убрали в
-    #time.sleep(3)
-    #return self.driver.find_elemrnt(By.CSS_SELECTOR, locator)
+    def refresh(self):
+        self.driver.refresh()
+
+    def get_title(self):
+        return self.driver.title

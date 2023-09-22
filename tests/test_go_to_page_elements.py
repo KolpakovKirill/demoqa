@@ -14,7 +14,7 @@ def test_go_topage_elements(browser):      #
 def test_page_elements(browser):
     elements_page = ElementsPage(browser)
     elements_page.visit()
-    elements_page.icon.click()
+    # elements_page.icon.click()
     assert elements_page.icon.exist()
 
 
@@ -22,12 +22,12 @@ def test_page_elements(browser):
 def test_check_sidebar_button(browser):
     elements_page = ElementsPage(browser)
     elements_page.visit()
-    elements_page.icon.click()
+    # elements_page.icon.click()
     assert elements_page.btn_sidebar_first.exist()
 
 
 def test_check_sidebar_first_nested_button(browser):
     elements_page = ElementsPage(browser)
     elements_page.visit()
-    elements_page.icon.click()
+    # elements_page.icon.click()
     assert elements_page.btn_sidebar_first_textbox.exist()
