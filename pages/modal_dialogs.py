@@ -6,3 +6,4 @@ class ModalDialogs(BasePage):
         super().__init__(driver, self.base_url)
 
         self.btn_sidebar_modal_dialogs = WebElement(driver, '.show > ul:nth-child(1) > li')
+        self.demoqa_tools_icon = WebElement(driver, '#app > header > a')

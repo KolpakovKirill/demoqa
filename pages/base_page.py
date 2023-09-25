@@ -17,7 +17,7 @@ class BasePage:
             return True
         return False
 
-    def back (self):
+    def back(self):
         self.driver.back()
 
     def forward(self):

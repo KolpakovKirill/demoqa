@@ -15,6 +15,7 @@ class ElementsPage(BasePage):         # класс
         self.btn_sidebar_first_checkbox = WebElement(driver, "div:nth-child(1) > div > ul > #item-1 > span")
         self.title = WebElement(driver, "DEMOQA")
         self.btn_fist_menu = WebElement(driver, "div:nth-child(1) > div > ul > li")
+        self.btn_sidebar_nav = WebElement(driver, "div > nav")
 
         self.text_please_select = WebElement(driver, "#app > div > div > div.row > div.col-12.mt-4.col-md-6")
         self.text_elements = WebElement(driver, "#app > div > div > div.pattern-backgound.playgound-header > div")
