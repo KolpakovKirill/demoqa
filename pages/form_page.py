@@ -14,6 +14,8 @@ class FromPage(BasePage):         # класс
         self.btn_submit = WebElement(driver, "#submit")
         self.modal_dialog = WebElement(driver, "body > div.fade.modal.show > div")
         self.btn_close_modal = WebElement(driver, "#closeLargeModal")
+        self.use_form = WebElement(driver, "#userForm")
+
 
         self.hobbies = WebElement(driver,"#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label")
         self.current_address = WebElement(driver,"#currentAddress")
@@ -23,3 +25,4 @@ class FromPage(BasePage):         # класс
         self.city = WebElement(driver, '#city > div > div.css-1hwfws3 > div ')
         self.city1 = WebElement(driver, '#react-select-4-option-1')
         self.submit_form = WebElement(driver, 'body > div.fade.modal.show > div > div')
+        #self.submit_button_locator = WebElement(driver, "submit")

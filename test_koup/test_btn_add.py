@@ -15,6 +15,7 @@ def test_koup_add (browser):
 
     assert koup_add.btn_add.get_text() == "Add Element"
 
+    # С помощью метода `get_dom_attribute` можно получить значение конкретного атрибута DOM элемента на веб-странице
     assert koup_add.btn_add.get_dom_attribute("onclick") == "addElement()"
     # кликнуть на кнопку 4 раза
     for i in range(4):

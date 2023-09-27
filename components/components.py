@@ -3,7 +3,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 class WebElement:
-    def __init__(self, driver, locator="", locator_type = "css"):  #
+    def __init__(self, driver, locator="", locator_type="css"):  #
         self.driver = driver
         self.locator = locator
         self.locator_type = locator_type
