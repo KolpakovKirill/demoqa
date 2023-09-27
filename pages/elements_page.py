@@ -19,7 +19,7 @@ class ElementsPage(BasePage):         # класс
 
         self.text_please_select = WebElement(driver, "#app > div > div > div.row > div.col-12.mt-4.col-md-6")
         self.text_elements = WebElement(driver, "#app > div > div > div.pattern-backgound.playgound-header > div")
-
+        self.block_menu = WebElement(driver, "div.row > div:nth-child(1)")
 
 
     #def equal_url(self): #Убрали
