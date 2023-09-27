@@ -1,30 +1,31 @@
-from selenium.webdriver.common.keys import Keys
+
 import time
+from components.components import WebElement
 from conftest import browser
 from pages.koup import Koup
 from pages.koup_add import KoupAdd
-def test_herokuapp (browser):
-    koup = Koup(browser)
-    koup_page = KoupAdd(browser)
-    koup.visit()
+def test_koup_add (browser):
+    koup_page = Koup(browser)
+    koup_add = KoupAdd(browser)
+    koup_page.visit()
 
-    assert koup.Link_add.get_text() == 'Add/Remove Elements'
-    koup.Link_add.click()
-    assert koup_page.equal_url()
+    assert koup_page.link_add.get_text() == 'Add/Remove Elements'
+    koup_page.link_add.click()
+    assert koup_add.equal_url()
 
-    assert koup_page.btn_add.get_text() == "Add Element"
+    assert koup_add.btn_add.get_text() == "Add Element"
 
-    assert koup_page.btn_add.get_dom_attribute("onclick") == "addElement()"
+    assert koup_add.btn_add.get_dom_attribute("onclick") == "addElement()"
     # кликнуть на кнопку 4 раза
     for i in range(4):
-        koup_page.btn_add.click()
+        koup_add.btn_add.click()
 
-    assert koup_page.btns_delete.check_count_elements(4)
+    assert koup_add.btns_delete.check_count_elements(4)
     # проверка для всех элементов
-    for element in koup_page.btns_delete.find_element():
-        assert element.tetx == "Delete"
+    for element in koup_add.btns_delete.find_elements():
+        assert element.text == "Delete"
     # проверка только для первого элемента
-    assert koup_page.btns_delete.get_text() == "Delete"
-    while koup_page.btns_delete.exist():
-        koup_page.btns_delete.click()
-    assert not koup_page.btns_delete.exist()
+    assert koup_add.btns_delete.get_text() == "Delete"
+    while koup_add.btns_delete.exist():
+        koup_add.btns_delete.click()
+    assert not koup_add.btns_delete.exist()

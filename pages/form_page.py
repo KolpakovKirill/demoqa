@@ -17,6 +17,9 @@ class FromPage(BasePage):         # класс
 
         self.hobbies = WebElement(driver,"#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label")
         self.current_address = WebElement(driver,"#currentAddress")
-        self.state = WebElement(driver, "#stateCity-wrapper")
-        self.state2 = WebElement(driver, "#state > div > div.css-1hwfws3 > div.css-1wa3eu0-placeholder")
+        self.state = WebElement(driver, '#state > div > div.css-1hwfws3 > div ')
+        self.state2 = WebElement(driver, "#react-select-3-option-2")
         self.state3 = WebElement(driver, "#stateCity-wrapper > div:nth-child(3)")
+        self.city = WebElement(driver, '#city > div > div.css-1hwfws3 > div ')
+        self.city1 = WebElement(driver, '#react-select-4-option-1')
+        self.submit_form = WebElement(driver, 'body > div.fade.modal.show > div > div')
