@@ -21,3 +21,12 @@ class Webtables(BasePage):
 
         self.pencil = WebElement(driver, '#edit-record-4 > svg')
         self.del_record = WebElement (driver, "#delete-record-4")
+        self.No_rows_found = WebElement (driver, "div.rt-noData")
+        self.del_record1 = WebElement(driver,"#delete-record-1 > svg > path")
+        self.del_record2 = WebElement (driver,"#delete-record-2 > svg > path")
+        self.del_record3 = WebElement (driver,"#delete-record-3 > svg > path")
+        self.rows = WebElement(driver,'#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.select-wrap.-pageSizeOptions > select')
+        self.select_rows_5 = WebElement(driver,'#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.select-wrap.-pageSizeOptions > select > option:nth-child(1)')
+        self.page_rows = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.-pageInfo > div > input[type=number]')
+        self.btn_next = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-next > button')
+        self.btn_previos = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-previous > button')

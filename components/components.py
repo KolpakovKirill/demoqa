@@ -85,6 +85,6 @@ class WebElement:
     def check_css(self, style, value=""):
         return self.find_element().value_of_css_property(style) == value
 
-#Или
-#def check_count_elements(self, count: int):
-        #return len(self.find_elements()) == count
+
+
+
