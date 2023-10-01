@@ -7,11 +7,14 @@ def test_alert(browser):
     page_alert = Alert(browser)
     page_alert.visit()
 
-    assert not page_alert.alert()
+    assert not page_alert.alert()  # алерт неактивен на странице
     page_alert.alert_button.click()
-    time.sleep(2)
-    assert page_alert.alert()
+    time.sleep(1)
+    assert page_alert.alert()  # # алерт активен на странице
     page_alert.alert().accept()
+
+ # переключение на всплывающее окно веб-страницы - alert (), для принятия (подтверждения) алерта на веб-странице используется метод из класса "Alert" в библиотеке Selenium WebDriver - accept()
+
 
 def test_alert_text(browser):
     page_alert = Alert(browser)
@@ -19,9 +22,9 @@ def test_alert_text(browser):
 
     page_alert.alert_button.click()
     time.sleep(2)
-    assert page_alert.alert().text == "You clicked a button"
+    assert page_alert.alert().text == "You clicked a button"  #  текст в активном алерте соответствует ожидаемому значению ("You clicked a button").
     page_alert.alert().accept()
-    assert  not page_alert.alert()
+    assert not page_alert.alert()   # проверяет, что активного алерта больше нет
 
 
 def test_confirm(browser):

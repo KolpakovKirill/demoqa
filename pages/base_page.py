@@ -32,7 +32,7 @@ class BasePage:
     def get_title(self):
         return self.driver.title
 
-    def alert(self):     # переключение на всплывающее окно (alert) веб-страницы
+    def alert(self):     # переключение на всплывающее окно веб-страницы - alert (), для принятия (подтверждения) алерта на веб-странице используется метод из класса "Alert" в библиотеке Selenium WebDriver - accept()
         try:
             return self.driver.switch_to.alert
         except Exception as ex:

@@ -10,9 +10,9 @@ class Alert(BasePage):
 
         }
 
-        self.alert_button = WebElement(driver, "#alertButton") # Первая кнопка "Click me"
-        self.confirm_button = WebElement (driver, "#confirmButt")  # Третья кнопка "Click me"
+        self.alert_button = WebElement(driver, "#alertButton")  # Первая кнопка "Click me"
+        self.confirm_button = WebElement (driver, "#confirmButton")  # Третья кнопка "Click me"
         self.confirm_result = WebElement (driver, "#confirmResult")
-        self.promt_button = WebElement (driver, "#promtButton") # Четвертая кнопка "Click me"
+        self.promt_button = WebElement (driver, "#promtButton")  # Четвертая кнопка "Click me"
         self.prompt_result = WebElement (driver, "#promptResult")
-        self.time_alert_button = WebElement(driver, '#timerAlertButton') # Вторая кнопка "Click me"
+        self.time_alert_button = WebElement(driver, '#timerAlertButton')  # Вторая кнопка "Click me"
