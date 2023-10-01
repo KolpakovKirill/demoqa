@@ -30,3 +30,16 @@ class Webtables(BasePage):
         self.page_rows = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.-pageInfo > div > input[type=number]')
         self.btn_next = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-next > button')
         self.btn_previos = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-previous > button')
+
+        self.table_record1 = WebElement(driver, 'div.rt-tr-group:nth-child(1) > div:nth-child(1) > div:nth-child(1)')
+        self.no_rows_found = WebElement (driver, "div.rt-noData")
+        self.delete_btns = WebElement(driver, '[title="Delete"]')
+
+        self.rows_per_page = WebElement(driver, '[aria-label="rows per page"]')
+        self.rows_per_page_5 = WebElement(driver, '[aria-label="rows per page"] > [value="5"]')
+        self.pages_count = WebElement(driver, '[class="-totalPages"]')
+        self.prev_button = WebElement(driver, '.-previous > button:nth-child(1)')
+        self.next_button = WebElement(driver, '.-next > button:nth-child(1)')
+        self.page_jump = WebElement(driver, 'span > div [aria-label="jump to page"]')
+
+

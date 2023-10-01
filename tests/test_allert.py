@@ -1,44 +1,44 @@
-from pages.alerts import Allert
+from pages.alerts import Alert
 from conftest import browser
 import time
-from components.components import WebElement
-def test_allert(browser):
-    page_test_allert = Allert(browser)
 
-    page_test_allert.visit()
-    assert not page_test_allert.alert()
-    page_test_allert.alert_button.click()
-    time.sleep(2)
-    assert page_test_allert.alert()
-    page_test_allert.alert().accept()
 
-    page_test_allert.visit()
-    page_test_allert.alert_button.click()
+def test_alert(browser):
+    page_alert = Alert(browser)
+    page_alert.visit()
+
+    assert not page_alert.alert()
+    page_alert.alert_button.click()
     time.sleep(2)
-    assert page_test_allert.alert().text == "You clicked a button"
-    page_test_allert.alert().accept()
-    assert  not page_test_allert.alert()
+    assert page_alert.alert()
+    page_alert.alert().accept()
+
+def test_alert_text(browser):
+    page_alert = Alert(browser)
+    page_alert.visit()
+
+    page_alert.alert_button.click()
+    time.sleep(2)
+    assert page_alert.alert().text == "You clicked a button"
+    page_alert.alert().accept()
+    assert  not page_alert.alert()
 
 
 def test_confirm(browser):
-    page_test_allert = Allert(browser)
-
-    page_test_allert.visit()
-
-    page_test_allert.alert_button.click()
+    page_alert = Alert(browser)
+    page_alert.visit()
+    page_alert.confirm_button.click()
     time.sleep(2)
-    page_test_allert.alert().dismiss()
-    assert page_test_allert.alert().text == "You selected Cancel"
+    page_alert.alert().dismiss()
+    assert page_alert.confirm_result.get_text() == "You selected Cancel"
 
 
 def test_prompt(browser):
-    page_test_allert = Allert(browser)
-
-    page_test_allert.visit()
-    page_test_allert.alert_button.click()
+    page_alert = Alert(browser)
+    page_alert.visit()
+    page_alert.alert_button.click()
     time.sleep(2)
-
-    page_test_allert.alert().send_keys("Tetser")
-    page_test_allert.alert().accept()
-    assert page_test_allert.prompt_result.get_text() == "You entered Tester"
+    page_alert.alert().send_keys("Tester")
+    page_alert.alert().accept()
+    assert page_alert.prompt_result.get_text() == "You entered Tester"
     time.sleep(2)

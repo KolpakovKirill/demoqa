@@ -10,8 +10,7 @@ class DemoQa(BasePage):
         self.icon = WebElement(driver, "#app > header > a")
         self.btn_elements = WebElement(driver, "#app > div > div > div.home-body > div > div:nth-child(1)")
         self.footer_text = WebElement(driver, "#app > footer") #
+        self.headers_h5 = WebElement(driver, "div>h5")
 
 
-    # убрали def equal_url(self):
-
-    # убрали def exist_icon(self):
+# self ссылка на текущий объект

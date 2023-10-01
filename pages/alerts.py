@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from components.components import WebElement
-class Allert(BasePage):
+class Alert(BasePage):
 
     def __init__(self, driver):
         self.base_url = "https://demoqa.com/alerts"
@@ -10,9 +10,9 @@ class Allert(BasePage):
 
         }
 
-        self.alert_button = WebElement(driver, "#alertButton")
-        self.confirm_button = WebElement (driver, "#confirmButt")
+        self.alert_button = WebElement(driver, "#alertButton") # Первая кнопка "Click me"
+        self.confirm_button = WebElement (driver, "#confirmButt")  # Третья кнопка "Click me"
         self.confirm_result = WebElement (driver, "#confirmResult")
-        self.promt_button = WebElement (driver, "#promtButton")
+        self.promt_button = WebElement (driver, "#promtButton") # Четвертая кнопка "Click me"
         self.prompt_result = WebElement (driver, "#promptResult")
-        self.time_alert_button = WebElement(driver, '#timerAlertButton')
+        self.time_alert_button = WebElement(driver, '#timerAlertButton') # Вторая кнопка "Click me"

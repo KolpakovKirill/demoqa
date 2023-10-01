@@ -1,10 +1,12 @@
 import logging
 from components.components import WebElement
-#from selenium.webdriver.common.by import By
+import requests
+
+
 class BasePage:
     def __init__(self, driver, base_url):
-        self.driver = driver            #
-        self.base_url = base_url     #"https://demoqa.com/"
+        self.driver = driver            #driver: Это атрибут, который представляет экземпляр объекта WebDriver
+        self.base_url = base_url     #"https://demoqa.com/" Это атрибут, который содержит базовый URL страницы.
         self.head_viewport = WebElement(driver, "head>meta[name = 'viewport']")
 
     def visit(self):
@@ -38,3 +40,7 @@ class BasePage:
             return False
 
 # Если возникла ошибка при переключении на всплывающее окно или его не удалось найти, то метод возвращает False
+
+    def code_status(self):
+        resp = requests.get(self.base_url)
+        return resp.status_code == 200

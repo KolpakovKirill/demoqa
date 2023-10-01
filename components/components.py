@@ -4,20 +4,20 @@ from selenium.webdriver.common.keys import Keys
 
 class WebElement:
     def __init__(self, driver, locator="", locator_type="css"):  #
-        self.driver = driver
+        self.driver = driver   #
         self.locator = locator
         self.locator_type = locator_type
     def click(self):
         self.find_element().click()
 
-    def exist(self):                    # Наличие элемента на веб-странице,если элемент не найден, метод вернет значение False
+    def exist(self):    # Cуществует ли элемент на странице
         try:
             self.find_element()
         except NoSuchElementException:
             return False
         return True
 
-    def get_text(self):     #возвращает текст элемента веб-страницы, найденного с помощью метода find_element
+    def get_text(self):     # возвращает текст элемента на странице в виде строки
         return str(self.find_element().text)
 
 
@@ -30,17 +30,16 @@ class WebElement:
     def find_elements(self):
         return self.driver.find_elements(self.get_by_type(), self.locator)
 
-    def check_count_elements(self, count: int):
-        self.count = count   #Поиск элементов на странице и проверка количества найденных элементов =  значению count
-        self.int = int
+    def check_count_elements(self, count: int): # позволяет проверять количество найденных элементов на странице, проверяет, что количество найденных элементов на странице соответствует заданному числу.
+        self.count = count
         if len(self.find_elements()) == count:
             return True
         return False
-    def send_keys(self, text: str):
+    def send_keys(self, text: str):    # Позволяет вводить текст в поле элемента на странице
         self.find_element().send_keys(text)
 
 
-    def click_force(self):
+    def click_force(self):     # нажмет на кнопку даже если ее невидно на странице (используеся JavaScript)
         self.driver.execute_script("arguments[0].click();", self.find_element())
 
 
@@ -48,7 +47,7 @@ class WebElement:
         self.find_element().send_keys(Keys.CONTROL + "a")
         self.find_element().send_keys(Keys.DELETE)
 
-    def get_dom_attribute(self, name: str):             # метод из апи селениум
+    def get_dom_attribute(self, name: str):  # Позволяет получить значение атрибута DOM элемента. Если атрибут существует и имеет непустое значение, метод возвращает это значение.
         value = self.find_element().get_dom_attribute(name)
 
         if value is None:
@@ -75,16 +74,14 @@ class WebElement:
         return False
 
 
-    def scroll_to_element(self):
+    def scroll_to_element(self):   # прокрутка страницы до определенного элемента
         self.driver.execute_script(
             "window.scrollTo(0, document.body.scrollHeight);",
             self.find_element()
         )
 
 
-    def check_css(self, style, value=""):
+    def check_css(self, style, value=""):   # цвет фона, шрифт, размер или позиционирование.
         return self.find_element().value_of_css_property(style) == value
-
-
 
 
