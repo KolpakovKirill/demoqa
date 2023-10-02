@@ -1,10 +1,10 @@
 from conftest import browser
 from pages.radio_button import RadioButton
 from pages.demoqa import DemoQa
-
 import pytest
+
+
 #@pytest.mark.skipif(True, reason="просто пропуск")
-@pytest.mark.skip
 def test_decor1(browser):
     radio = DemoQa(browser)
 

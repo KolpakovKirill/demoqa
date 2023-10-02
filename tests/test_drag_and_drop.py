@@ -12,7 +12,7 @@ def test_drag_and_drop(browser):
     action_chains.drag_and_drop(drag_drop.drag.find_element(), drag_drop.drop.find_element()).perform()
     time.sleep(1)
     assert drag_drop.drop.check_css('backgroundColor', 'rgba(70, 130, 180, 1)')
-    action_chains.drag_and_drop_by_offset(drag_drop.drag.find_element(), -200, 0 ).perform()
+    action_chains.drag_and_drop_by_offset(drag_drop.drag.find_element(), -200, 0).perform() # перемещается кнопка
     time.sleep(2)
     assert drag_drop.drop.check_css('backgroundColor', 'rgba(70, 130, 180, 1)')
 
