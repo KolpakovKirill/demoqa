@@ -22,7 +22,7 @@ def test_alert_text(browser):
 
     page_alert.alert_button.click()
     time.sleep(2)
-    assert page_alert.alert().text == "You clicked a button"  #  текст в активном алерте соответствует ожидаемому значению ("You clicked a button").
+    assert page_alert.alert().text == "You clicked a button"  # текст в активном алерте соответствует ожидаемому значению ("You clicked a button").
     page_alert.alert().accept()
     assert not page_alert.alert()   # проверяет, что активного алерта больше нет
 
@@ -34,7 +34,6 @@ def test_confirm(browser):  # Отмена алерта
     time.sleep(2)
     page_alert.alert().dismiss() # Вызывается метод `dismiss()` в диалоговом окне alert, чтобы отменить его
     assert page_alert.confirm_result.get_text() == "You selected Cancel"  # Проверяется, что текст врезультате выбора кнопки Отмена - равен строке "You selected Cancel"
-
 
 
 def test_prompt(browser):  # Вводим имя

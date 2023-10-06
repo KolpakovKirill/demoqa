@@ -9,8 +9,8 @@ def test_decor(browser):
     demoqa_page = DemoQa(browser)
 
     demoqa_page.visit()
-    assert demoqa_page.headers_h5.check_count_elements(6)  # Метод  проверяет, что количество заголовков h5 равно 6.
-    for element in demoqa_page.headers_h5.find_elements():  # происходит проверка, что каждый  заголовок h5 не пустой
+    assert demoqa_page.headers_h5.check_count_elements(6)  # Метод проверяет, что количество заголовков h5 равно 6.
+    for element in demoqa_page.headers_h5.find_elements():  # происходит проверка, что каждый заголовок h5 не пустой
         assert not element.text == ""
 
 

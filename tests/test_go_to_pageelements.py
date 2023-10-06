@@ -15,4 +15,4 @@ def visit(self):
 
 
 def get_url(self):
-        return self.driver.current_url
+    return self.driver.current_url

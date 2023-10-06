@@ -2,6 +2,7 @@ from conftest import browser
 from pages.modal_dialogs import ModalDialogs
 from pages.demoqa import DemoQa
 
+
 def test_modal_elements(browser):
     modal_elements = ModalDialogs(browser)
     modal_elements.visit()

@@ -1,17 +1,16 @@
 from conftest import browser
-from pages.demoqa import DemoQa
 from pages.elements_page import ElementsPage
-from pages.base_page import BasePage
+from pages.demoqa import DemoQa
 
 
 def test_navigation(browser):
-    demo_qa_page_1 = DemoQa(browser)
     elements_page = ElementsPage(browser)
+    demoqa_page = DemoQa(browser)
 
-    demo_qa_page_1.visit()
-    elements_page.btn_sidebar_first.click()
-
+    demoqa_page.visit()
+    demoqa_page.btn_elements.click()
     browser.refresh()
     browser.back()
     browser.forward()
-    elements_page.equal_url()
+    assert elements_page.equal_url()
+

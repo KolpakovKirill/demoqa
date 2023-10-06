@@ -1,8 +1,9 @@
 import time
-from components.components import WebElement
 from conftest import browser
 from pages.demoqa import DemoQa
 from pages.elements_page import ElementsPage
+
+
 def test_size(browser):
     demo_qa_page = DemoQa(browser)
 

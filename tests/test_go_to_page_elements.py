@@ -4,7 +4,6 @@ from conftest import browser
 
 
 def test_go_topage_elements(browser):      #
-
     demo_qa_page = DemoQa(browser)
     elements_page = ElementsPage(browser)
     demo_qa_page.visit()

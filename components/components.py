@@ -5,8 +5,8 @@ from selenium.webdriver.common.keys import Keys
 
 class WebElement:
     def __init__(self, driver, locator="", locator_type="css"):  #
-        self.driver = driver   #
-        self.locator = locator
+        self.driver = driver   # объект, представляющий веб-драйвер
+        self.locator = locator   # описание местоположения элемента на странице).
         self.locator_type = locator_type
 
     def click(self):
