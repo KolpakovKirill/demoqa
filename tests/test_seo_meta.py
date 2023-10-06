@@ -1,11 +1,12 @@
 from pages.accordion import Accordion
-from pages.alerts import Allert
+from pages.alerts import Alert
 from pages.demoqa import DemoQa
 from pages.browser_tab import BrowserTab
 import time
 import pytest
 
-@pytest.mark.parametrize("pages", [Accordion, Allert, DemoQa, BrowserTab])
+
+@pytest.mark.parametrize("pages", [Accordion, Alert, DemoQa, BrowserTab])
 def test_check_title_all_pages(browser, pages):
     page = pages(browser)
     page.visit()

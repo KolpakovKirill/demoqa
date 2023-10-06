@@ -1,6 +1,8 @@
 from pages.elements_page import ElementsPage
 from pages.demoqa import DemoQa
 from conftest import browser
+
+
 def test_go_topage_elements(browser):      #
 
     demo_qa_page = DemoQa(browser)

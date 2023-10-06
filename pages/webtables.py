@@ -28,8 +28,8 @@ class Webtables(BasePage):
         self.rows = WebElement(driver,'#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.select-wrap.-pageSizeOptions > select')
         self.select_rows_5 = WebElement(driver,'#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.select-wrap.-pageSizeOptions > select > option:nth-child(1)')
         self.page_rows = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-center > span.-pageInfo > div > input[type=number]')
-        self.btn_next = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-next > button')
-        self.btn_previos = WebElement(driver, '#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.pagination-bottom > div > div.-previous > button')
+        self.btn_next = WebElement(driver, '.-next > button:nth-child(1)')
+        self.btn_previos = WebElement(driver, '.-previous > button:nth-child(1)')
 
         self.table_record1 = WebElement(driver, 'div.rt-tr-group:nth-child(1) > div:nth-child(1) > div:nth-child(1)')
         self.no_rows_found = WebElement (driver, "div.rt-noData")

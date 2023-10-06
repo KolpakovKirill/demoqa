@@ -1,7 +1,7 @@
 from pages.webtables import Webtables
 
 
-def test_sort_by(browser):
+def test_sort(browser):
     sort = Webtables(browser)
     sort.visit()
     assert sort.column_first_name.get_dom_attribute('class') == sort.column_last_name.get_dom_attribute(

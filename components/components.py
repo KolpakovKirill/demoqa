@@ -2,11 +2,13 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
+
 class WebElement:
     def __init__(self, driver, locator="", locator_type="css"):  #
         self.driver = driver   #
         self.locator = locator
         self.locator_type = locator_type
+
     def click(self):
         self.find_element().click()
 
@@ -17,9 +19,9 @@ class WebElement:
             return False
         return True
 
+
     def get_text(self):     # возвращает текст элемента на странице в виде строки
         return str(self.find_element().text)
-
 
     def visible(self):
         return self.find_element().is_displayed()
@@ -35,13 +37,13 @@ class WebElement:
         if len(self.find_elements()) == count:
             return True
         return False
+
+
     def send_keys(self, text: str):    # Позволяет вводить текст в поле элемента на странице
         self.find_element().send_keys(text)
 
-
     def click_force(self):     # нажмет на кнопку даже если ее невидно на странице (используеся JavaScript)
         self.driver.execute_script("arguments[0].click();", self.find_element())
-
 
     def clear(self):
         self.find_element().send_keys(Keys.CONTROL + "a")
@@ -73,13 +75,11 @@ class WebElement:
             print("Locator type " + self.locator_type + "not correct")
         return False
 
-
     def scroll_to_element(self):   # прокрутка страницы до определенного элемента
         self.driver.execute_script(
             "window.scrollTo(0, document.body.scrollHeight);",
             self.find_element()
         )
-
 
     def check_css(self, style, value=""):   # цвет фона, шрифт, размер или позиционирование.
         return self.find_element().value_of_css_property(style) == value

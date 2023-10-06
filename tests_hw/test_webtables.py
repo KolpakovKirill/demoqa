@@ -22,16 +22,16 @@ def test_np_bttns(browser):
     type_list = ['Firstname', 'LastName', 'user@email.com', 27, 90, 'department']
 
     page_webtables_loc.visit()
-    page_webtables_loc.rows_per_page.scroll_to_element()
-    page_webtables_loc.rows_per_page.click()
-    page_webtables_loc.rows_per_page.send_keys(Keys.UP)
-    page_webtables_loc.rows_per_page.send_keys(Keys.RETURN)
-    page_webtables_loc.btn_add.scroll_to_element()
-    assert page_webtables_loc.next_button.get_dom_attribute('disabled')
-    assert page_webtables_loc.prev_button.get_dom_attribute('disabled')
-    counter = 0
+    page_webtables_loc.rows_per_page.scroll_to_element()  #  Прокрутка до элемента 'rows_per_page'.
+    page_webtables_loc.rows_per_page.click()    # Нажатие на
+    page_webtables_loc.rows_per_page.send_keys(Keys.UP)  #  нажатия клавиши 'Вверх'.
+    page_webtables_loc.rows_per_page.send_keys(Keys.RETURN) #  нажатия клавиши return
+    page_webtables_loc.btn_add.scroll_to_element() # Прокрутка до элемента 'btn_add'.
+    assert page_webtables_loc.next_button.get_dom_attribute('disabled')  # Проверка, что кнопка 'next_button' не активнаи меет состояние  'disabled'.
+    assert page_webtables_loc.prev_button.get_dom_attribute('disabled')  # Проверка, что кнопка 'prev_button' не активнаи меет состояние  'disabled'.
+    counter = 0  # Цель этого кода - добавление новой записи в таблицу. В данном случае, код будет выполняться 8 раз
     while page_webtables_loc.pages_count.get_text() == '1':
-        counter += 1    #в цикле выполняется 8 итераций
+        counter += 1    #в цикле выполняется 8 итераций,
         page_webtables_loc.btn_add.click()
         page_webtables_loc.first_name.send_keys(type_list[0])
         page_webtables_loc.last_name.send_keys(type_list[1])

@@ -3,6 +3,7 @@ from pages.form_page import FromPage
 import time
 from selenium.webdriver.common.keys import Keys
 
+
 def test_login_form(browser):
     page = FromPage(browser)
     page.visit()
